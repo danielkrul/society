@@ -1,0 +1,79 @@
+@import 'functions';
+@import 'init';
+
+@font-face {
+  font-family: 'OpenSansLight';
+  	src: url('../design/fonts/OpenSans/opensansLigh.eot');
+  	src: url('../design/fonts/OpenSans/opensansLight.eot?#iefix') format('embedded-opentype'),
+       url('../design/fonts/OpenSans/opensansLight.woff2') format('woff2'),
+       url('../design/fonts/OpenSans/opensansLight.woff') format('woff'),
+       url('../design/fonts/OpenSans/opensansLight.ttf')  format('truetype'),
+       url('../design/fonts/OpenSans/opensansLight.svg#OpenSansLight') format('svg');
+}
+
+#wrapper{
+	min-height: 100%;
+	.display-flex();
+
+	.fullSize{
+		.flex(1);
+		min-width: 100vw;
+
+		.image{
+			width: 100vw;
+			height: 100vh;
+			&:nth-child(n + 2) {
+				background: red;
+				display: inline-flex;
+			}
+
+			.display-flex();
+			.inner{
+			}
+
+			.left{
+				width: 2em;
+				.display-flex();
+			}
+
+			.right{
+				width: 2em;
+				.display-flex();
+			}
+
+			.center{
+				.flex(1);
+				.display-flex();
+				.flex-center();
+
+				.introTitles{
+					width: -webkit-fit-content;
+					width: -moz-fit-content;
+					width: fit-content;
+					margin: 0 auto;
+					text-align: center;
+					color: white;
+
+					h1{
+						font-family: 'Armadillo';
+						font-size: 4em;
+					}
+
+					h2{
+						font-family: 'OpenSansLight';
+					}
+
+					img{
+						width: 30%;
+					}
+				}
+			}
+
+			a.button{
+				color: white;
+				text-decoration: none;
+				font-size: 2em;
+			}
+		}
+	}
+}

@@ -1,0 +1,140 @@
+@redModalColor: #CF000F;
+@greenModalColor: #1E824C;
+@blueModalColor: #1F3A93;
+@yellowModalColor: #333;
+
+@import 'functions';
+
+.modalShadow{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	display: none;
+
+	.modalDialog{
+		position: relative;
+		top: 50%;
+		.translateXYCenter();
+		background: white;
+		left: 50%;
+		width: 18em;
+
+		.errorMessage{
+			.header{
+				background: @redModalColor;
+
+				img{
+					width: 2em;
+    				display: block;
+    				margin: 0 auto;
+    				padding-left: .5em;
+    				padding-top: .5em;
+    				padding-bottom: .5em;
+				}
+			}
+
+			.title{
+				padding-left: 1em;
+				padding-right: 1em;
+				padding-top: .5em;
+				padding-bottom: .5em;
+				h3{
+					color: #333;
+				}
+			}
+			.text{
+				margin-left: 1em;
+				margin-right: 1em;
+				padding-bottom: .5em;
+				margin-bottom: .5em;
+				border-bottom: 1px solid rgba(195, 195, 195, .5);
+			}
+			.buttons{
+				margin-left: .5em;
+				margin-right: .5em;
+    			padding-bottom: .5em;
+				.display-flex();
+
+				a{
+					text-decoration: none;
+					text-transform: uppercase;
+					color: @redModalColor;
+					font-size: .8em;
+					margin: .5em;
+				}
+
+				.left{
+					.flex(1);
+					text-align: left;
+				}
+
+				.right{
+					.flex(1);
+					text-align: right;
+				}
+			}
+		}
+
+		.successMessage{
+			.header{
+				.modalShadow .modalDialog .errorMessage .header;
+				background: @greenModalColor;
+			}
+
+			.title{
+				.modalShadow .modalDialog .errorMessage .title;
+			}
+			.text{
+				.modalShadow .modalDialog .errorMessage .text;
+			}
+			.buttons{
+				.modalShadow .modalDialog .errorMessage .buttons;
+				a {
+					color: @greenModalColor;
+				}
+			}
+		}
+
+		.infoMessage{
+			.header{
+				.modalShadow .modalDialog .errorMessage .header;
+				background: @blueModalColor;
+			}
+
+			.title{
+				.modalShadow .modalDialog .errorMessage .title;
+			}
+			.text{
+				.modalShadow .modalDialog .errorMessage .text;
+			}
+			.buttons{
+				.modalShadow .modalDialog .errorMessage .buttons;
+				a {
+					color: @blueModalColor;
+				}
+			}
+		}
+
+		.warningMessage{
+			.header{
+				.modalShadow .modalDialog .errorMessage .header;
+				background: @yellowModalColor;
+			}
+
+			.title{
+				.modalShadow .modalDialog .errorMessage .title;
+			}
+			.text{
+				.modalShadow .modalDialog .errorMessage .text;
+			}
+			.buttons{
+				.modalShadow .modalDialog .errorMessage .buttons;
+				a {
+					color: @yellowModalColor;
+				}
+			}
+		}
+	}
+}
